@@ -79,36 +79,13 @@ def match_row(row1,row2,x,y):
     condition_12 = ((row1['phone'][x]) == (row2['phone'][y]) and (row1['email'][x]) == (row2['email'][y]))
     condition_13 = ((row1['phone'][x]) == (row2['phone'][y]))
     condition_14 = ((row1['email'][x]) == (row2['email'][y]))
-    
-    if  condition_1 == True :
-        return True
-    if condition_2 == True :
-        return True
-    if condition_3 == True :
-        return True
-    if condition_4 == True :
-        return True
-    if condition_5 == True :
-        return True            
-    if condition_6 == True :
-        return True
-    if condition_7 == True :
-        return True
-    if condition_8 == True :
-        return True
-    if condition_9 == True :
-        return True
-    if condition_10 == True :
-        return True
-    if condition_11 == True :
-        return True
-    if condition_12 == True :
-        return True
-    if condition_13 == True :
-        return True
-    if condition_14 == True :
-        return True
-        
+    condition_all = [condition_1,condition_2,condition_3,condition_4,condition_5,condition_6,
+                    condition_7,condition_8,condition_9,condition_10,condition_11,condition_12,
+                    condition_13,condition_14]
+    for x in condition_all : 
+        if x == True:
+            return True
+
 def loop_data(g1,g2):
     n = 0
     g1 = g1.reset_index(drop=True)
@@ -159,3 +136,33 @@ print(sorting(data))
             data = data.drop(x , axis=0)
             data.reset_index(drop=True)
     return data """
+
+"""         if  condition_1 == True :
+        return True
+    if condition_2 == True :
+        return True
+    if condition_3 == True :
+        return True
+    if condition_4 == True :
+        return True
+    if condition_5 == True :
+        return True            
+    if condition_6 == True :
+        return True
+    if condition_7 == True :
+        return True
+    if condition_8 == True :
+        return True
+    if condition_9 == True :
+        return True
+    if condition_10 == True :
+        return True
+    if condition_11 == True :
+        return True
+    if condition_12 == True :
+        return True
+    if condition_13 == True :
+        return True
+    if condition_14 == True :
+        return True
+ """
