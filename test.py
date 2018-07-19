@@ -67,24 +67,48 @@ def match_row(row1,row2,x,y):
 
     condition_1 = ((row1['first_name'][x]) == (row2['first_name'][y]) and (row1['last_name'][x]) == (row2['last_name'][y])) and ((row1['phone'][x]) == (row2['phone'][y]) and (row1['email'][x]) == (row2['email'][y]))
     condition_2 = ((row1['first_name'][x]) == (row2['first_name'][y]) and (row1['last_name'][x]) == (row2['last_name'][y])) and ((row1['phone'][x]) == (row2['phone'][y]))
-    condition_3 = ((row1['first_name'][x]) == (row2['first_name'][y]) and (row1['last_name'][x]) == (row2['last_name'][y])) and ((row1['phone'][x]) == (row2['phone'][y]) and (row1['email'][x]) == (row2['email'][y]))
-    condition_4 = ((row1['first_name'][x]) == (row2['first_name'][y]) and (row1['last_name'][x]) == (row2['last_name'][y])) and ((row1['phone'][x]) == (row2['phone'][y]) and (row1['email'][x]) == (row2['email'][y]))
-    condition_5 = ((row1['first_name'][x]) == (row2['first_name'][y]) and (row1['last_name'][x]) == (row2['last_name'][y])) and ((row1['email'][x]) == (row2['email'][y]))
-    condition_6 = ((row1['first_name'][x]) == (row2['first_name'][y]) and (row1['phone'][x]) == (row2['phone'][y]) and ((row1['email'][x]) == (row2['email'][y]))
-    condition_7 = ((row1['first_name'][x]) == (row2['first_name'][y]) and (row1['last_name'][x]) == (row2['last_name'][y]))
-    condition_8 = (row1['first_name'][x]) == (row2['first_name'][y]) and (row1['phone'][x]) == (row2['phone'][y])
-    condition_9 = ((row1['first_name'][x]) == (row2['first_name'][y]) and (row1['last_name'][x]) == (row2['last_name'][y])) and ((row1['phone'][x]) == (row2['phone'][y]) and (row1['email'][x]) == (row2['email'][y]))
-    condition_10 = ((row1['first_name'][x]) == (row2['first_name'][y]) and (row1['last_name'][x]) == (row2['last_name'][y])) and ((row1['phone'][x]) == (row2['phone'][y]) and (row1['email'][x]) == (row2['email'][y]))
-    condition_11 = ((row1['first_name'][x]) == (row2['first_name'][y]) and (row1['last_name'][x]) == (row2['last_name'][y])) and ((row1['phone'][x]) == (row2['phone'][y]) and (row1['email'][x]) == (row2['email'][y]))
-    condition_12 = ((row1['first_name'][x]) == (row2['first_name'][y]) and (row1['last_name'][x]) == (row2['last_name'][y])) and ((row1['phone'][x]) == (row2['phone'][y]) and (row1['email'][x]) == (row2['email'][y]))
-    condition_13 = ((row1['first_name'][x]) == (row2['first_name'][y]) and (row1['last_name'][x]) == (row2['last_name'][y])) and ((row1['phone'][x]) == (row2['phone'][y]) and (row1['email'][x]) == (row2['email'][y]))
-    condition_14 = ((row1['first_name'][x]) == (row2['first_name'][y]) and (row1['last_name'][x]) == (row2['last_name'][y])) and ((row1['phone'][x]) == (row2['phone'][y]) and (row1['email'][x]) == (row2['email'][y]))
+    condition_3 = ((row1['first_name'][x]) == (row2['first_name'][y]) and (row1['last_name'][x]) == (row2['last_name'][y])) and ((row1['email'][x]) == (row2['email'][y]))
+    condition_4 = ((row1['first_name'][x]) == (row2['first_name'][y]) and (row1['phone'][x]) == (row2['phone'][y])) and (row1['email'][x]) == (row2['email'][y])
+    condition_5 = ((row1['first_name'][x]) == (row2['first_name'][y])) and ((row1['last_name'][x]) == (row2['last_name'][y]))
+    condition_6 = ((row1['first_name'][x]) == (row2['first_name'][y])) and ((row1['phone'][x]) == (row2['phone'][y]))
+    condition_7 = ((row1['first_name'][x]) == (row2['first_name'][y]))  and ((row1['email'][x]) == (row2['email'][y]))
+    condition_8 = (row1['last_name'][x]) == (row2['last_name'][y]) and (row1['phone'][x]) == (row2['phone'][y]) and (row1['email'][x]) == (row2['email'][y])
+    condition_9 = ((row1['last_name'][x]) == (row2['last_name'][y]) and (row1['phone'][x]) == (row2['phone'][y]))
+    condition_10 = ((row1['last_name'][x]) == (row2['last_name'][y])) and ((row1['email'][x]) == (row2['email'][y]))
+    condition_11 = ((row1['first_name'][x]) == (row2['first_name'][y]) and (row1['phone'][x]) == (row2['phone'][y])) and (row1['email'][x]) == (row2['email'][y])
+    condition_12 = ((row1['phone'][x]) == (row2['phone'][y]) and (row1['email'][x]) == (row2['email'][y]))
+    condition_13 = ((row1['phone'][x]) == (row2['phone'][y]))
+    condition_14 = ((row1['email'][x]) == (row2['email'][y]))
+    
     if  condition_1 == True :
         return True
-    #if condition_2 == True :
-    #    return True
-    
-
+    if condition_2 == True :
+        return True
+    if condition_3 == True :
+        return True
+    if condition_4 == True :
+        return True
+    if condition_5 == True :
+        return True            
+    if condition_6 == True :
+        return True
+    if condition_7 == True :
+        return True
+    if condition_8 == True :
+        return True
+    if condition_9 == True :
+        return True
+    if condition_10 == True :
+        return True
+    if condition_11 == True :
+        return True
+    if condition_12 == True :
+        return True
+    if condition_13 == True :
+        return True
+    if condition_14 == True :
+        return True
+        
 def loop_data(g1,g2):
     n = 0
     g1 = g1.reset_index(drop=True)
