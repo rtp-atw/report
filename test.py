@@ -100,18 +100,46 @@ def loop_data(g1,g2):
 
 def sorting(data):
     base_data = data.copy()
-    
-    group_2017_04 = base_data[(base_data['booking_creation_year'] == 2017) & (base_data['booking_creation_month'] == 7)]
+
+    group_2017_04 = base_data[(base_data['booking_creation_year'] == 2017) & (base_data['booking_creation_month'] == 4)]
     group_2017_04_col_fil = group_2017_04.filter(items=['first_name','last_name','phone','email'])
 
-    group_2017_05 = base_data[(base_data['booking_creation_year'] == 2017) & (base_data['booking_creation_month'] == 9)]
+    group_2017_05 = base_data[(base_data['booking_creation_year'] == 2017) & (base_data['booking_creation_month'] == 5)]
     group_2017_05_col_fil = group_2017_05.filter(items=['first_name','last_name','phone','email'])
 
+    group_2017_06 = base_data[(base_data['booking_creation_year'] == 2017) & (base_data['booking_creation_month'] == 6)]
+    group_2017_06_col_fil = group_2017_06.filter(items=['first_name','last_name','phone','email'])
 
+    group_2017_07 = base_data[(base_data['booking_creation_year'] == 2017) & (base_data['booking_creation_month'] == 7)]
+    group_2017_07_col_fil = group_2017_7.filter(items=['first_name','last_name','phone','email'])
+
+    group_2017_08 = base_data[(base_data['booking_creation_year'] == 2017) & (base_data['booking_creation_month'] == 8)]
+    group_2017_08_col_fil = group_2017_8.filter(items=['first_name','last_name','phone','email'])
+
+    group_2017_09 = base_data[(base_data['booking_creation_year'] == 2017) & (base_data['booking_creation_month'] == 9)]
+    group_2017_09_col_fil = group_2017_9.filter(items=['first_name','last_name','phone','email'])
+
+    group_2017_10 = base_data[(base_data['booking_creation_year'] == 2017) & (base_data['booking_creation_month'] == 10)]
+    group_2017_10_col_fil = group_2017_10.filter(items=['first_name','last_name','phone','email'])
+
+    group_2017_11 = base_data[(base_data['booking_creation_year'] == 2017) & (base_data['booking_creation_month'] == 11)]
+    group_2017_05_col_fil = group_2017_11.filter(items=['first_name','last_name','phone','email'])
+
+    group_2017_12 = base_data[(base_data['booking_creation_year'] == 2017) & (base_data['booking_creation_month'] == 12)]
+    group_2017_06_col_fil = group_2017_12.filter(items=['first_name','last_name','phone','email'])
+
+    group_2017_01 = base_data[(base_data['booking_creation_year'] == 2018) & (base_data['booking_creation_month'] == 1)]
+    group_2017_01_col_fil = group_2017_1.filter(items=['first_name','last_name','phone','email'])
+
+    group_2017_02 = base_data[(base_data['booking_creation_year'] == 2018) & (base_data['booking_creation_month'] == 2)]
+    group_2017_02_col_fil = group_2017_2.filter(items=['first_name','last_name','phone','email'])
+
+    group_2017_03 = base_data[(base_data['booking_creation_year'] == 2018) & (base_data['booking_creation_month'] == 3)]
+    group_2017_03_col_fil = group_2017_3.filter(items=['first_name','last_name','phone','email'])
+
+    
     user_return = loop_data(group_2017_04_col_fil,group_2017_05_col_fil)
 
-    group_2017_04_col_fil.to_csv('group_2017_04_col_fil.csv')
-    group_2017_05_col_fil.to_csv('group_2017_05_col_fil.csv')
 
     return user_return
 
