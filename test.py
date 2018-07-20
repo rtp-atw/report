@@ -67,17 +67,18 @@ def match_row(row1,row2,x,y):
     condition_1 = ((row1['first_name'][x]) == (row2['first_name'][y])) and ((row1['last_name'][x]) == (row2['last_name'][y]))
     condition_2 = ((row1['phone'][x]) == (row2['phone'][y]))
     condition_3 = ((row1['email'][x]) == (row2['email'][y]))
-    if (row1['first_name'][x] != '' and row1['last_name'][x] != ''):
+    if (row1['first_name'][x] != '') and (row1['last_name'][x] != ''):
         if condition_1:
             #print(row1['first_name'][x],row1['last_name'][x],row2['first_name'][y],row2['last_name'][y])
             return True
-        elif condition_2:
+    if ((row1['phone'][x] != '') == (row2['phone'][y]) != ''):
+        if condition_2:
             #print(row1['phone'][x],row2['phone'][y])
             return True
-        elif condition_3:
+    if ((row1['email'][x] != '') == (row2['email'][y] != '')):
+        if condition_3:
             #print(row1['email'][x],row2['email'][y])
             return True
-        else: return False
     else:
         return False
 
