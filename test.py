@@ -64,21 +64,20 @@ def save_xlsx(file_fil) :
     writer.save()
 
 def match_row(row1,row2,x,y):
-    print(row1['first_name'][x])
     condition_1 = ((row1['first_name'][x]) == (row2['first_name'][y])) and ((row1['last_name'][x]) == (row2['last_name'][y]))
     condition_2 = ((row1['phone'][x]) == (row2['phone'][y]))
     condition_3 = ((row1['email'][x]) == (row2['email'][y]))
-    
     if (row1['first_name'][x] != '' and row1['last_name'][x] != ''):
         if condition_1:
+            print(row1['first_name'][x],row1['last_name'][x],row2['first_name'][y],row2['last_name'][y])
             return True
-
-    if condition_2:
-        print(row1['phone'][x],row2['phone'][y])
-        return True
-    elif condition_3:
-        print(row1['email'][x],row2['email'][y])
-        return True
+        elif condition_2:
+            print(row1['phone'][x],row2['phone'][y])
+            return True
+        elif condition_3:
+            print(row1['email'][x],row2['email'][y])
+            return True
+        else: return False
     else:
         return False
 
@@ -86,11 +85,13 @@ def match_row(row1,row2,x,y):
 def loop_data(g1,g2):
     n = 0
     g1 = g1.reset_index(drop=True)
-    g2 = g2.reset_index(drop=True)  
+    g2 = g2.reset_index(drop=True)
+
     for x in range(len(g1.index)):
         for y in range(len(g2.index)):
             matching = match_row(g1,g2,x,y)
             if matching == True:
+                print(x,y,matching)
                 n = n+1
                 print(n)
 
@@ -294,7 +295,7 @@ def sorting(data):
     df_result = pd.DataFrame(data=user_return_per_month) 
     df_result.to_csv('df_result.csv')     
     return df_result
-
+    
 data = filter_status(df)
 data = data.copy()
 data = replace_word(data,filter_word)
