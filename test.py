@@ -58,8 +58,9 @@ def filter_status(data):
     return data_filtered_status
 
 def save_xlsx(file_fil) :
-    name = input("File name : ")
-    writer = ExcelWriter(str(name)+'.xlsx')   
+    #name = input("File name : ")
+    name = 'df_result_returning'
+    writer = ExcelWriter('df_result_returning.xlsx')   
     file_fil.to_excel(writer,'Sheet1')
     writer.save()
 
@@ -300,7 +301,7 @@ def sorting(data):
 data = filter_status(df)
 data = data.copy()
 data = replace_word(data,filter_word)
-print(sorting(data))
-#save_xlsx(data)
+df_result_returning = sorting(data)
+save_xlsx(df_result_returning)
 #data.to_csv('data_clean.csv')
 
