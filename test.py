@@ -64,13 +64,24 @@ def save_xlsx(file_fil) :
     writer.save()
 
 def match_row(row1,row2,x,y):
-
+    print(row1['first_name'][x])
     condition_1 = ((row1['first_name'][x]) == (row2['first_name'][y])) and ((row1['last_name'][x]) == (row2['last_name'][y]))
     condition_2 = ((row1['phone'][x]) == (row2['phone'][y]))
     condition_3 = ((row1['email'][x]) == (row2['email'][y]))
+    
+    if (row1['first_name'][x] != '' and row1['last_name'][x] != ''):
+        if condition_1:
+            return True
 
-    if condition_1 == True or condition_2 == True or condition_3 == True :
+    if condition_2:
+        print(row1['phone'][x],row2['phone'][y])
         return True
+    elif condition_3:
+        print(row1['email'][x],row2['email'][y])
+        return True
+    else:
+        return False
+
 
 def loop_data(g1,g2):
     n = 0
@@ -81,6 +92,7 @@ def loop_data(g1,g2):
             matching = match_row(g1,g2,x,y)
             if matching == True:
                 n = n+1
+                print(n)
 
     return n
 
@@ -135,7 +147,6 @@ def sorting(data):
     group_2018_07 = base_data[(base_data['booking_creation_year'] == 2018) & (base_data['booking_creation_month'] == 7)]
     group_2018_07_col_fil = group_2018_07.filter(items=['first_name','last_name','phone','email'])
 
-    
     user_return_04_05 = loop_data(group_2017_04_col_fil,group_2017_05_col_fil)
     user_return_04_06 = loop_data(group_2017_04_col_fil,group_2017_06_col_fil)
     user_return_04_07 = loop_data(group_2017_04_col_fil,group_2017_07_col_fil)
@@ -152,7 +163,6 @@ def sorting(data):
     user_return_04_06_18 = loop_data(group_2017_04_col_fil,group_2018_06_col_fil)
     user_return_04_07_18 = loop_data(group_2017_04_col_fil,group_2018_07_col_fil)
     
-    print('test04')
     user_return_05_06 = loop_data(group_2017_05_col_fil,group_2017_06_col_fil)
     user_return_05_07 = loop_data(group_2017_05_col_fil,group_2017_07_col_fil)
     user_return_05_08 = loop_data(group_2017_05_col_fil,group_2017_08_col_fil)
@@ -168,7 +178,6 @@ def sorting(data):
     user_return_05_06_18 = loop_data(group_2017_05_col_fil,group_2018_06_col_fil)
     user_return_05_07_18 = loop_data(group_2017_05_col_fil,group_2018_07_col_fil)
 
-    print('test05')
     user_return_06_07 = loop_data(group_2017_06_col_fil,group_2017_07_col_fil)
     user_return_06_08 = loop_data(group_2017_06_col_fil,group_2017_08_col_fil)
     user_return_06_09 = loop_data(group_2017_06_col_fil,group_2017_09_col_fil)
@@ -183,7 +192,6 @@ def sorting(data):
     user_return_06_06_18 = loop_data(group_2017_06_col_fil,group_2018_06_col_fil)
     user_return_06_07_18 = loop_data(group_2017_06_col_fil,group_2018_07_col_fil)
 
-    print('test06')
     user_return_07_08 = loop_data(group_2017_07_col_fil,group_2017_08_col_fil)
     user_return_07_09 = loop_data(group_2017_07_col_fil,group_2017_09_col_fil)
     user_return_07_10 = loop_data(group_2017_07_col_fil,group_2017_10_col_fil)
@@ -197,7 +205,6 @@ def sorting(data):
     user_return_07_06_18 = loop_data(group_2017_07_col_fil,group_2018_06_col_fil)
     user_return_07_07_18 = loop_data(group_2017_07_col_fil,group_2018_07_col_fil)
 
-    print('test07')
     user_return_08_09 = loop_data(group_2017_08_col_fil,group_2017_09_col_fil)
     user_return_08_10 = loop_data(group_2017_08_col_fil,group_2017_10_col_fil)
     user_return_08_11 = loop_data(group_2017_08_col_fil,group_2017_11_col_fil)
@@ -210,7 +217,6 @@ def sorting(data):
     user_return_08_06_18 = loop_data(group_2017_08_col_fil,group_2018_06_col_fil)
     user_return_08_07_18 = loop_data(group_2017_08_col_fil,group_2018_07_col_fil)
 
-    print('test08')
     user_return_09_10 = loop_data(group_2017_09_col_fil,group_2017_10_col_fil)
     user_return_09_11 = loop_data(group_2017_09_col_fil,group_2017_11_col_fil)
     user_return_09_12 = loop_data(group_2017_09_col_fil,group_2017_12_col_fil)
@@ -222,7 +228,6 @@ def sorting(data):
     user_return_09_06_18 = loop_data(group_2017_09_col_fil,group_2018_06_col_fil)
     user_return_09_07_18 = loop_data(group_2017_09_col_fil,group_2018_07_col_fil)
     
-    print('test09')
     user_return_10_11 = loop_data(group_2017_10_col_fil,group_2017_11_col_fil)
     user_return_10_12 = loop_data(group_2017_10_col_fil,group_2017_12_col_fil)
     user_return_10_01_18 = loop_data(group_2017_10_col_fil,group_2018_01_col_fil)
@@ -233,7 +238,6 @@ def sorting(data):
     user_return_10_06_18 = loop_data(group_2017_10_col_fil,group_2018_06_col_fil)
     user_return_10_07_18 = loop_data(group_2017_10_col_fil,group_2018_07_col_fil)
 
-    print('test10')
     user_return_11_12 = loop_data(group_2017_11_col_fil,group_2017_12_col_fil)
     user_return_11_01_18 = loop_data(group_2017_11_col_fil,group_2018_01_col_fil)
     user_return_11_02_18 = loop_data(group_2017_11_col_fil,group_2018_02_col_fil)
@@ -243,8 +247,6 @@ def sorting(data):
     user_return_11_06_18 = loop_data(group_2017_11_col_fil,group_2018_06_col_fil)
     user_return_11_07_18 = loop_data(group_2017_11_col_fil,group_2018_07_col_fil)
 
-    print('test11')
-
     user_return_12_01_18 = loop_data(group_2017_12_col_fil,group_2018_01_col_fil)
     user_return_12_02_18 = loop_data(group_2017_12_col_fil,group_2018_02_col_fil)
     user_return_12_03_18 = loop_data(group_2017_12_col_fil,group_2018_03_col_fil)
@@ -252,28 +254,24 @@ def sorting(data):
     user_return_12_05_18 = loop_data(group_2017_12_col_fil,group_2018_05_col_fil)
     user_return_12_06_18 = loop_data(group_2017_12_col_fil,group_2018_06_col_fil)
     user_return_12_07_18 = loop_data(group_2017_12_col_fil,group_2018_07_col_fil)
-    print('test12')
+
     user_return_01_02_18 = loop_data(group_2018_01_col_fil,group_2018_02_col_fil)
     user_return_01_03_18 = loop_data(group_2018_01_col_fil,group_2018_03_col_fil)
     user_return_01_04_18 = loop_data(group_2018_01_col_fil,group_2018_04_col_fil)
     user_return_01_05_18 = loop_data(group_2018_01_col_fil,group_2018_05_col_fil)
     user_return_01_06_18 = loop_data(group_2018_01_col_fil,group_2018_06_col_fil)
     user_return_01_07_18 = loop_data(group_2018_01_col_fil,group_2018_07_col_fil)
-    print('test0118')
+    
     user_return_02_03_18 = loop_data(group_2018_02_col_fil,group_2018_03_col_fil)
     user_return_02_04_18 = loop_data(group_2018_02_col_fil,group_2018_04_col_fil)
     user_return_02_05_18 = loop_data(group_2018_02_col_fil,group_2018_05_col_fil)
     user_return_02_06_18 = loop_data(group_2018_02_col_fil,group_2018_06_col_fil)
     user_return_02_07_18 = loop_data(group_2018_02_col_fil,group_2018_07_col_fil)
 
-    print('test0218') 
-
     user_return_03_04_18 = loop_data(group_2018_03_col_fil,group_2018_04_col_fil)
     user_return_03_05_18 = loop_data(group_2018_03_col_fil,group_2018_05_col_fil)
     user_return_03_06_18 = loop_data(group_2018_03_col_fil,group_2018_06_col_fil)
     user_return_03_07_18 = loop_data(group_2018_03_col_fil,group_2018_07_col_fil)
-
-    print('test0318')
 
     user_return_per_month = {'': ['user_04_17', 'user_05_17', 'user_06_17', 'user_07_17', 'user_08_17', 'user_09_17', 'user_10_17', 'user_11_17', 'user_12_17','user_01_18','user_02_18','user_03_18','user_04_18','user_05_18','user_06_18','user_07_18','user_08_18'], 
                             '04': ['','','','','','','','','','','','','','','','',''],
@@ -294,36 +292,13 @@ def sorting(data):
                             '07_18': [user_return_04_07_18,user_return_05_07_18,user_return_06_07_18,user_return_07_07_18,user_return_08_07_18,user_return_09_07_18,user_return_10_07_18,user_return_11_07_18,user_return_12_07_18,user_return_01_07_18,user_return_02_07_18,user_return_03_07_18,user_return_04_07_18,user_return_05_07_18,user_return_06_07_18,'','']
                             }
     df_result = pd.DataFrame(data=user_return_per_month) 
-    df_result.to_csv('df_result')     
+    df_result.to_csv('df_result.csv')     
     return df_result
 
 data = filter_status(df)
 data = data.copy()
 data = replace_word(data,filter_word)
-#save_xlsx(data)
-#save_xlsx(data_fil_cc)
-#data.to_csv('data_clean.csv')
 print(sorting(data))
+#save_xlsx(data)
+#data.to_csv('data_clean.csv')
 
-""" def filter_condition(data):
-    condition_first_name = data.index[data.loc[:, 'first_name'].str.contains('')]
-    for x in condition_first_name:
-        if (data['email'][x] == '') & (data['phone'][x] == '') & (data['last_name'][x] == ''):
-            data = data.drop(x , axis=0)
-            data.reset_index(drop=True)
-
-    condition_last_name = data.index[data.loc[:, 'last_name'].str.contains('')]
-    for x in condition_last_name:
-        if ((data['email'][x] == '') & (data['phone'][x] == '')) & (data['first_name'][x] == ''):
-            data = data.drop(x , axis=0)
-            data.reset_index(drop=True)
-    return data """
-
-"""         '01_18': [user_return_04_01_18,user_return_05_01_18,user_return_06_01_18,user_return_07_01_18,user_return_08_01_18,user_return_09_01_18,user_return_10_01_18,user_return_11_01_18,user_return_12_01_18],
-                            '02_18': [user_return_04_02_18,user_return_05_02_18,user_return_06_02_18,user_return_07_02_18,user_return_08_02_18,user_return_09_02_18,user_return_10_02_18,user_return_11_02_18,user_return_12_02_18,user_return_01_02_18],
-                            '03_18': [user_return_04_03_18,user_return_05_03_18,user_return_06_03_18,user_return_07_03_18,user_return_08_03_18,user_return_09_03_18,user_return_10_03_18,user_return_11_03_18,user_return_12_03_18,user_return_01_03_18,user_return_02_03_18],
-                            '04_18': [user_return_04_04_18,user_return_05_04_18,user_return_06_04_18,user_return_07_04_18,user_return_08_04_18,user_return_09_04_18,user_return_10_04_18,user_return_11_04_18,user_return_12_04_18,user_return_01_04_18,user_return_02_04_18,user_return_03_04_18],
-                            '05_18': [user_return_04_05_18,user_return_05_05_18,user_return_06_05_18,user_return_07_05_18,user_return_08_05_18,user_return_09_05_18,user_return_10_05_18,user_return_11_05_18,user_return_12_05_18,user_return_01_05_18,user_return_02_05_18,user_return_03_05_18,user_return_04_05_18],
-                            '06_18': [user_return_04_06_18,user_return_05_06_18,user_return_06_06_18,user_return_07_06_18,user_return_08_06_18,user_return_09_06_18,user_return_10_06_18,user_return_11_06_18,user_return_12_06_18,user_return_01_06_18,user_return_02_06_18,user_return_03_06_18,user_return_04_06_18,user_return_05_06_18],
-                            '07_18': [user_return_04_07_18,user_return_05_07_18,user_return_06_07_18,user_return_07_07_18,user_return_08_07_18,user_return_09_07_18,user_return_10_07_18,user_return_11_07_18,user_return_12_07_18,user_return_01_07_18,user_return_02_07_18,user_return_03_07_18,user_return_04_07_18,user_return_05_07_18,user_return_06_07_18]
- """
