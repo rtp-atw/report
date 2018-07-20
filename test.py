@@ -111,37 +111,215 @@ def sorting(data):
     group_2017_06_col_fil = group_2017_06.filter(items=['first_name','last_name','phone','email'])
 
     group_2017_07 = base_data[(base_data['booking_creation_year'] == 2017) & (base_data['booking_creation_month'] == 7)]
-    group_2017_07_col_fil = group_2017_7.filter(items=['first_name','last_name','phone','email'])
+    group_2017_07_col_fil = group_2017_07.filter(items=['first_name','last_name','phone','email'])
 
     group_2017_08 = base_data[(base_data['booking_creation_year'] == 2017) & (base_data['booking_creation_month'] == 8)]
-    group_2017_08_col_fil = group_2017_8.filter(items=['first_name','last_name','phone','email'])
+    group_2017_08_col_fil = group_2017_08.filter(items=['first_name','last_name','phone','email'])
 
     group_2017_09 = base_data[(base_data['booking_creation_year'] == 2017) & (base_data['booking_creation_month'] == 9)]
-    group_2017_09_col_fil = group_2017_9.filter(items=['first_name','last_name','phone','email'])
+    group_2017_09_col_fil = group_2017_09.filter(items=['first_name','last_name','phone','email'])
 
     group_2017_10 = base_data[(base_data['booking_creation_year'] == 2017) & (base_data['booking_creation_month'] == 10)]
     group_2017_10_col_fil = group_2017_10.filter(items=['first_name','last_name','phone','email'])
 
     group_2017_11 = base_data[(base_data['booking_creation_year'] == 2017) & (base_data['booking_creation_month'] == 11)]
-    group_2017_05_col_fil = group_2017_11.filter(items=['first_name','last_name','phone','email'])
+    group_2017_11_col_fil = group_2017_11.filter(items=['first_name','last_name','phone','email'])
 
     group_2017_12 = base_data[(base_data['booking_creation_year'] == 2017) & (base_data['booking_creation_month'] == 12)]
-    group_2017_06_col_fil = group_2017_12.filter(items=['first_name','last_name','phone','email'])
+    group_2017_12_col_fil = group_2017_12.filter(items=['first_name','last_name','phone','email'])
 
-    group_2017_01 = base_data[(base_data['booking_creation_year'] == 2018) & (base_data['booking_creation_month'] == 1)]
-    group_2017_01_col_fil = group_2017_1.filter(items=['first_name','last_name','phone','email'])
+    group_2018_01 = base_data[(base_data['booking_creation_year'] == 2018) & (base_data['booking_creation_month'] == 1)]
+    group_2018_01_col_fil = group_2018_01.filter(items=['first_name','last_name','phone','email'])
 
-    group_2017_02 = base_data[(base_data['booking_creation_year'] == 2018) & (base_data['booking_creation_month'] == 2)]
-    group_2017_02_col_fil = group_2017_2.filter(items=['first_name','last_name','phone','email'])
+    group_2018_02 = base_data[(base_data['booking_creation_year'] == 2018) & (base_data['booking_creation_month'] == 2)]
+    group_2018_02_col_fil = group_2018_02.filter(items=['first_name','last_name','phone','email'])
 
-    group_2017_03 = base_data[(base_data['booking_creation_year'] == 2018) & (base_data['booking_creation_month'] == 3)]
-    group_2017_03_col_fil = group_2017_3.filter(items=['first_name','last_name','phone','email'])
+    group_2018_03 = base_data[(base_data['booking_creation_year'] == 2018) & (base_data['booking_creation_month'] == 3)]
+    group_2018_03_col_fil = group_2018_03.filter(items=['first_name','last_name','phone','email'])
+
+    group_2018_04 = base_data[(base_data['booking_creation_year'] == 2018) & (base_data['booking_creation_month'] == 4)]
+    group_2018_04_col_fil = group_2018_04.filter(items=['first_name','last_name','phone','email'])
+
+    group_2018_05 = base_data[(base_data['booking_creation_year'] == 2018) & (base_data['booking_creation_month'] == 5)]
+    group_2018_05_col_fil = group_2018_05.filter(items=['first_name','last_name','phone','email'])
+
+    group_2018_06 = base_data[(base_data['booking_creation_year'] == 2018) & (base_data['booking_creation_month'] == 6)]
+    group_2018_06_col_fil = group_2018_06.filter(items=['first_name','last_name','phone','email'])
+
+    group_2018_07 = base_data[(base_data['booking_creation_year'] == 2018) & (base_data['booking_creation_month'] == 7)]
+    group_2018_07_col_fil = group_2018_07.filter(items=['first_name','last_name','phone','email'])
 
     
-    user_return = loop_data(group_2017_04_col_fil,group_2017_05_col_fil)
+    user_return_04_05 = loop_data(group_2017_04_col_fil,group_2017_05_col_fil)
+    user_return_04_06 = loop_data(group_2017_04_col_fil,group_2017_06_col_fil)
+    user_return_04_07 = loop_data(group_2017_04_col_fil,group_2017_07_col_fil)
+    user_return_04_08 = loop_data(group_2017_04_col_fil,group_2017_08_col_fil)
+    user_return_04_09 = loop_data(group_2017_04_col_fil,group_2017_09_col_fil)
+    user_return_04_10 = loop_data(group_2017_04_col_fil,group_2017_10_col_fil)
+    user_return_04_11 = loop_data(group_2017_04_col_fil,group_2017_11_col_fil)
+    user_return_04_12 = loop_data(group_2017_04_col_fil,group_2017_12_col_fil)
+    print('test1')
+    user_return_05_06 = loop_data(group_2017_05_col_fil,group_2017_06_col_fil)
+    user_return_05_07 = loop_data(group_2017_05_col_fil,group_2017_07_col_fil)
+    user_return_05_08 = loop_data(group_2017_05_col_fil,group_2017_08_col_fil)
+    user_return_05_09 = loop_data(group_2017_05_col_fil,group_2017_09_col_fil)
+    user_return_05_10 = loop_data(group_2017_05_col_fil,group_2017_10_col_fil)
+    user_return_05_11 = loop_data(group_2017_05_col_fil,group_2017_11_col_fil)
+    user_return_05_12 = loop_data(group_2017_05_col_fil,group_2017_12_col_fil)
+    print('test2')
+    user_return_06_07 = loop_data(group_2017_06_col_fil,group_2017_07_col_fil)
+    user_return_06_08 = loop_data(group_2017_06_col_fil,group_2017_08_col_fil)
+    user_return_06_09 = loop_data(group_2017_06_col_fil,group_2017_09_col_fil)
+    user_return_06_10 = loop_data(group_2017_06_col_fil,group_2017_10_col_fil)
+    user_return_06_11 = loop_data(group_2017_06_col_fil,group_2017_11_col_fil)
+    user_return_06_12 = loop_data(group_2017_06_col_fil,group_2017_12_col_fil)
 
+    user_return_07_08 = loop_data(group_2017_07_col_fil,group_2017_08_col_fil)
+    user_return_07_09 = loop_data(group_2017_07_col_fil,group_2017_09_col_fil)
+    user_return_07_10 = loop_data(group_2017_07_col_fil,group_2017_10_col_fil)
+    user_return_07_11 = loop_data(group_2017_07_col_fil,group_2017_11_col_fil)
+    user_return_07_12 = loop_data(group_2017_07_col_fil,group_2017_12_col_fil)
 
-    return user_return
+    user_return_08_09 = loop_data(group_2017_08_col_fil,group_2017_09_col_fil)
+    user_return_08_10 = loop_data(group_2017_08_col_fil,group_2017_10_col_fil)
+    user_return_08_11 = loop_data(group_2017_08_col_fil,group_2017_11_col_fil)
+    user_return_08_12 = loop_data(group_2017_08_col_fil,group_2017_12_col_fil)
+
+    user_return_09_10 = loop_data(group_2017_09_col_fil,group_2017_10_col_fil)
+    user_return_09_11 = loop_data(group_2017_09_col_fil,group_2017_11_col_fil)
+    user_return_09_12 = loop_data(group_2017_09_col_fil,group_2017_12_col_fil)
+    
+    user_return_10_11 = loop_data(group_2017_10_col_fil,group_2017_11_col_fil)
+    user_return_10_12 = loop_data(group_2017_10_col_fil,group_2017_12_col_fil)
+
+    user_return_11_12 = loop_data(group_2017_11_col_fil,group_2017_12_col_fil)
+    print('test18')
+    user_return_12_01_18 = loop_data(group_2017_12_col_fil,group_2018_01_col_fil)
+    user_return_12_02_18 = loop_data(group_2017_12_col_fil,group_2018_02_col_fil)
+    user_return_12_03_18 = loop_data(group_2017_12_col_fil,group_2018_03_col_fil)
+    user_return_12_04_18 = loop_data(group_2017_12_col_fil,group_2018_04_col_fil)
+    user_return_12_05_18 = loop_data(group_2017_12_col_fil,group_2018_05_col_fil)
+    user_return_12_06_18 = loop_data(group_2017_12_col_fil,group_2018_06_col_fil)
+    user_return_12_07_18 = loop_data(group_2017_12_col_fil,group_2018_07_col_fil)
+
+    user_return_01_02_18 = loop_data(group_2018_01_col_fil,group_2018_02_col_fil)
+    user_return_01_03_18 = loop_data(group_2018_01_col_fil,group_2018_03_col_fil)
+    user_return_01_04_18 = loop_data(group_2018_01_col_fil,group_2018_04_col_fil)
+    user_return_01_05_18 = loop_data(group_2018_01_col_fil,group_2018_05_col_fil)
+    user_return_01_06_18 = loop_data(group_2018_01_col_fil,group_2018_06_col_fil)
+    user_return_01_07_18 = loop_data(group_2018_01_col_fil,group_2018_07_col_fil)
+    
+    user_return_02_03_18 = loop_data(group_2018_02_col_fil,group_2018_03_col_fil)
+    user_return_02_04_18 = loop_data(group_2018_02_col_fil,group_2018_04_col_fil)
+    user_return_02_05_18 = loop_data(group_2018_02_col_fil,group_2018_05_col_fil)
+    user_return_02_06_18 = loop_data(group_2018_02_col_fil,group_2018_06_col_fil)
+    user_return_02_07_18 = loop_data(group_2018_02_col_fil,group_2018_07_col_fil)
+    print('test020318') 
+    user_return_03_04_18 = loop_data(group_2018_03_col_fil,group_2018_04_col_fil)
+    user_return_03_05_18 = loop_data(group_2018_03_col_fil,group_2018_05_col_fil)
+    user_return_03_06_18 = loop_data(group_2018_03_col_fil,group_2018_06_col_fil)
+    user_return_03_07_18 = loop_data(group_2018_03_col_fil,group_2018_07_col_fil)
+    
+    user_return_04_05_18 = loop_data(group_2018_04_col_fil,group_2018_05_col_fil)
+    user_return_04_06_18 = loop_data(group_2018_04_col_fil,group_2018_06_col_fil)
+    user_return_04_07_18 = loop_data(group_2018_04_col_fil,group_2018_07_col_fil)
+
+    user_return_05_06_18 = loop_data(group_2018_05_col_fil,group_2018_06_col_fil)
+    user_return_05_07_18 = loop_data(group_2018_05_col_fil,group_2018_07_col_fil)
+
+    user_return_06_07_18 = loop_data(group_2018_06_col_fil,group_2018_07_col_fil)
+
+    user_return_04_01_18 = loop_data(group_2017_04_col_fil,group_2018_01_col_fil)
+    user_return_04_02_18 = loop_data(group_2017_04_col_fil,group_2018_02_col_fil)
+    user_return_04_03_18 = loop_data(group_2017_04_col_fil,group_2018_03_col_fil)
+    user_return_04_04_18 = loop_data(group_2017_04_col_fil,group_2018_04_col_fil)
+    user_return_04_05_18 = loop_data(group_2017_04_col_fil,group_2018_05_col_fil)
+    user_return_04_06_18 = loop_data(group_2017_04_col_fil,group_2018_06_col_fil)
+    user_return_04_07_18 = loop_data(group_2017_04_col_fil,group_2018_07_col_fil)
+
+    user_return_05_01_18 = loop_data(group_2017_05_col_fil,group_2018_01_col_fil)
+    user_return_05_02_18 = loop_data(group_2017_05_col_fil,group_2018_02_col_fil)
+    user_return_05_03_18 = loop_data(group_2017_05_col_fil,group_2018_03_col_fil)
+    user_return_05_04_18 = loop_data(group_2017_05_col_fil,group_2018_04_col_fil)
+    user_return_05_05_18 = loop_data(group_2017_05_col_fil,group_2018_05_col_fil)
+    user_return_05_06_18 = loop_data(group_2017_05_col_fil,group_2018_06_col_fil)
+    user_return_05_07_18 = loop_data(group_2017_05_col_fil,group_2018_07_col_fil)
+    print('test0518')
+    user_return_06_01_18 = loop_data(group_2017_06_col_fil,group_2018_01_col_fil)
+    user_return_06_02_18 = loop_data(group_2017_06_col_fil,group_2018_02_col_fil)
+    user_return_06_03_18 = loop_data(group_2017_06_col_fil,group_2018_03_col_fil)
+    user_return_06_04_18 = loop_data(group_2017_06_col_fil,group_2018_04_col_fil)
+    user_return_06_05_18 = loop_data(group_2017_06_col_fil,group_2018_05_col_fil)
+    user_return_06_06_18 = loop_data(group_2017_06_col_fil,group_2018_06_col_fil)
+    user_return_06_07_18 = loop_data(group_2017_06_col_fil,group_2018_07_col_fil)
+
+    user_return_07_01_18 = loop_data(group_2017_07_col_fil,group_2018_01_col_fil)
+    user_return_07_02_18 = loop_data(group_2017_07_col_fil,group_2018_02_col_fil)
+    user_return_07_03_18 = loop_data(group_2017_07_col_fil,group_2018_03_col_fil)
+    user_return_07_04_18 = loop_data(group_2017_07_col_fil,group_2018_04_col_fil)
+    user_return_07_05_18 = loop_data(group_2017_07_col_fil,group_2018_05_col_fil)
+    user_return_07_06_18 = loop_data(group_2017_07_col_fil,group_2018_06_col_fil)
+    user_return_07_07_18 = loop_data(group_2017_07_col_fil,group_2018_07_col_fil)
+
+    user_return_08_01_18 = loop_data(group_2017_08_col_fil,group_2018_01_col_fil)
+    user_return_08_02_18 = loop_data(group_2017_08_col_fil,group_2018_02_col_fil)
+    user_return_08_03_18 = loop_data(group_2017_08_col_fil,group_2018_03_col_fil)
+    user_return_08_04_18 = loop_data(group_2017_08_col_fil,group_2018_04_col_fil)
+    user_return_08_05_18 = loop_data(group_2017_08_col_fil,group_2018_05_col_fil)
+    user_return_08_06_18 = loop_data(group_2017_08_col_fil,group_2018_06_col_fil)
+    user_return_08_07_18 = loop_data(group_2017_08_col_fil,group_2018_07_col_fil)
+
+    user_return_09_01_18 = loop_data(group_2017_09_col_fil,group_2018_01_col_fil)
+    user_return_09_02_18 = loop_data(group_2017_09_col_fil,group_2018_02_col_fil)
+    user_return_09_03_18 = loop_data(group_2017_09_col_fil,group_2018_03_col_fil)
+    user_return_09_04_18 = loop_data(group_2017_09_col_fil,group_2018_04_col_fil)
+    user_return_09_05_18 = loop_data(group_2017_09_col_fil,group_2018_05_col_fil)
+    user_return_09_06_18 = loop_data(group_2017_09_col_fil,group_2018_06_col_fil)
+    user_return_09_07_18 = loop_data(group_2017_09_col_fil,group_2018_07_col_fil)
+
+    user_return_10_01_18 = loop_data(group_2017_10_col_fil,group_2018_01_col_fil)
+    user_return_10_02_18 = loop_data(group_2017_10_col_fil,group_2018_02_col_fil)
+    user_return_10_03_18 = loop_data(group_2017_10_col_fil,group_2018_03_col_fil)
+    user_return_10_04_18 = loop_data(group_2017_10_col_fil,group_2018_04_col_fil)
+    user_return_10_05_18 = loop_data(group_2017_10_col_fil,group_2018_05_col_fil)
+    user_return_10_06_18 = loop_data(group_2017_10_col_fil,group_2018_06_col_fil)
+    user_return_10_07_18 = loop_data(group_2017_10_col_fil,group_2018_07_col_fil)
+    print('test100718')
+    user_return_11_01_18 = loop_data(group_2017_11_col_fil,group_2018_01_col_fil)
+    user_return_11_02_18 = loop_data(group_2017_11_col_fil,group_2018_02_col_fil)
+    user_return_11_03_18 = loop_data(group_2017_11_col_fil,group_2018_03_col_fil)
+    user_return_11_04_18 = loop_data(group_2017_11_col_fil,group_2018_04_col_fil)
+    user_return_11_05_18 = loop_data(group_2017_11_col_fil,group_2018_05_col_fil)
+    user_return_11_06_18 = loop_data(group_2017_11_col_fil,group_2018_06_col_fil)
+    user_return_11_07_18 = loop_data(group_2017_11_col_fil,group_2018_07_col_fil)
+
+    user_return_12_01_18 = loop_data(group_2017_12_col_fil,group_2018_01_col_fil)
+    user_return_12_02_18 = loop_data(group_2017_12_col_fil,group_2018_02_col_fil)
+    user_return_12_03_18 = loop_data(group_2017_12_col_fil,group_2018_03_col_fil)
+    user_return_12_04_18 = loop_data(group_2017_12_col_fil,group_2018_04_col_fil)
+    user_return_12_05_18 = loop_data(group_2017_12_col_fil,group_2018_05_col_fil)
+    user_return_12_06_18 = loop_data(group_2017_12_col_fil,group_2018_06_col_fil)
+    user_return_12_07_18 = loop_data(group_2017_12_col_fil,group_2018_07_col_fil)
+
+    user_return_per_month = {'': ['user_04_17', 'user_05_17', 'user_06_17', 'user_07_17', 'user_08_17', 'user_09_17', 'user_10_17', 'user_11_17', 'user_12_17','user_01_18','user_02_18','user_03_18','user_04_18','user_05_18','user_06_18','user_07_18','user_08_18'], 
+                            '04': ['','','','','','','','','','','','','','','',''],
+                            '05': [user_return_04_05],
+                            '06': [user_return_04_06, user_return_05_06],
+                            '07': [user_return_04_07, user_return_05_07,user_return_06_07],
+                            '08': [user_return_04_08, user_return_05_08,user_return_06_08,user_return_07_08],
+                            '09': [user_return_04_09, user_return_05_09,user_return_06_09,user_return_07_09,user_return_08_09],
+                            '10': [user_return_04_10, user_return_05_10,user_return_06_10,user_return_07_10,user_return_08_10,user_return_09_10],
+                            '11': [user_return_04_11, user_return_05_11,user_return_06_11,user_return_07_11,user_return_08_11,user_return_09_11,user_return_10_11],
+                            '12': [user_return_04_12, user_return_05_12,user_return_06_12,user_return_07_12,user_return_08_12,user_return_09_12,user_return_10_12,user_return_11_12],
+                            '01_18': [user_return_04_01_18,user_return_05_01_18,user_return_06_01_18,user_return_07_01_18,user_return_08_01_18,user_return_09_01_18,user_return_10_01_18,user_return_11_01_18,user_return_12_01_18],
+                            '02_18': [user_return_04_02_18,user_return_05_02_18,user_return_06_02_18,user_return_07_02_18,user_return_08_02_18,user_return_09_02_18,user_return_10_02_18,user_return_11_02_18,user_return_12_02_18,user_return_01_02_18],
+                            '03_18': [user_return_04_03_18,user_return_05_03_18,user_return_06_03_18,user_return_07_03_18,user_return_08_03_18,user_return_09_03_18,user_return_10_03_18,user_return_11_03_18,user_return_12_03_18,user_return_01_03_18,user_return_02_03_18],
+                            '04_18': [user_return_04_04_18,user_return_05_04_18,user_return_06_04_18,user_return_07_04_18,user_return_08_04_18,user_return_09_04_18,user_return_10_04_18,user_return_11_04_18,user_return_12_04_18,user_return_01_04_18,user_return_02_04_18,user_return_03_04_18],
+                            '05_18': [user_return_04_05_18,user_return_05_05_18,user_return_06_05_18,user_return_07_05_18,user_return_08_05_18,user_return_09_05_18,user_return_10_05_18,user_return_11_05_18,user_return_12_05_18,user_return_01_05_18,user_return_02_05_18,user_return_03_05_18,user_return_04_05_18],
+                            '06_18': [user_return_04_06_18,user_return_05_06_18,user_return_06_06_18,user_return_07_06_18,user_return_08_06_18,user_return_09_06_18,user_return_10_06_18,user_return_11_06_18,user_return_12_06_18,user_return_01_06_18,user_return_02_06_18,user_return_03_06_18,user_return_04_06_18,user_return_05_06_18],
+                            '07_18': [user_return_04_07_18,user_return_05_07_18,user_return_06_07_18,user_return_07_07_18,user_return_08_07_18,user_return_09_07_18,user_return_10_07_18,user_return_11_07_18,user_return_12_07_18,user_return_01_07_18,user_return_02_07_18,user_return_03_07_18,user_return_04_07_18,user_return_05_07_18,user_return_06_07_18]}
+    df = pd.DataFrame(data=user_return_per_month)      
+    return df
 
 data = filter_status(df)
 data = data.copy()
