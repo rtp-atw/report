@@ -72,11 +72,11 @@ def match_row(row1,row2,x,y):
         if condition_1:
             #print(row1['first_name'][x],row1['last_name'][x],row2['first_name'][y],row2['last_name'][y])
             return True
-    if ((row1['phone'][x] != '') == (row2['phone'][y]) != ''):
+    if ((row1['phone'][x] != '') and (row2['phone'][y]) != ''):
         if condition_2:
             #print(row1['phone'][x],row2['phone'][y])
             return True
-    if ((row1['email'][x] != '') == (row2['email'][y] != '')):
+    if ((row1['email'][x] != '') and (row2['email'][y] != '')):
         if condition_3:
             #print(row1['email'][x],row2['email'][y])
             return True
