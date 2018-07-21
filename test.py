@@ -70,15 +70,15 @@ def match_row(row1,row2,x,y):
     condition_3 = ((row1['email'][x]) == (row2['email'][y]))
     if (row1['first_name'][x] != '') and (row1['last_name'][x] != ''):
         if condition_1:
-            #print(row1['first_name'][x],row1['last_name'][x],row2['first_name'][y],row2['last_name'][y])
+            print(row1['first_name'][x],row1['last_name'][x],row2['first_name'][y],row2['last_name'][y])
             return True
     if ((row1['phone'][x] != '') and (row2['phone'][y]) != ''):
         if condition_2:
-            #print(row1['phone'][x],row2['phone'][y])
+            print(row1['phone'][x],row2['phone'][y])
             return True
     if ((row1['email'][x] != '') and (row2['email'][y] != '')):
         if condition_3:
-            #print(row1['email'][x],row2['email'][y])
+            print(row1['email'][x],row2['email'][y])
             return True
     else:
         return False
@@ -93,9 +93,9 @@ def loop_data(g1,g2):
         for y in range(len(g2.index)):
             matching = match_row(g1,g2,x,y)
             if matching == True:
-                #print(x,y,matching)
+                print(x,y,matching)
                 n = n+1
-                #print(n)
+                print(n)
 
     return n
 
@@ -305,3 +305,40 @@ df_result_returning = sorting(data)
 save_xlsx(df_result_returning)
 #data.to_csv('data_clean.csv')
 
+""" if __name__ == "__main__":
+    df = pd.read_csv('BookUpdate13July2018.csv')
+    filter_word = ['xxxx','jjjjj','xxx','ไดรฟ์ฮับ','','ทดสอบ','testx',
+                'drivehub','คับ','test','testing','test','ลุงคิดละ',
+                'x','reserve','tester','test003','test02','test004',
+                'tesing for top carrent','ex','noo','joy','pattaya',
+                'lg','รับด่วน ที่ส่ง 2 คัน','X จอง','gade','เช่ารายเดือน','LINE@',
+                'พี่บี','โอเค','จองให้ลูกค้า','V.','เอ็กจองให้','ลค มาทาง line',
+                'dfsdfsdf','sdfgsdfsdf','ลุกค้าLine@','จองด่วน','จองผ่าน call center',
+                'ลูกค้าจองผ่าน Call Center','Admin by PX','จองแทนลูกค้า','แทรคเตอร์จองแทน',
+                'ลูกค้าคนจีน','จองผ่าน Callcenter',"Admin by P'X",'vv','fsssssss',
+                'ลูกค้า','25 วัน','ส้ม','ทดสอบ','TT','t','I','nui','cc',
+                'พพ','พพพ','drivehubtestCPA','จองเอง2','n','nin',
+                'ไลน์ @','จองผ่าน Call','คุณเอก','ผ่านทาง call center','Cnv',
+                'iOS','max','dh','hjfj','yjbl','K','hj','จองผ่าน  Callcenter',
+                'ทดสอบจองระบบ','By Call Center','Line@','รับรถ7.00','จองผ่าน CS',
+                'ผ่าน CS','รับด่วนสนามบิน','รับวันนี้15.00','แป้ง','โทรเข้า CC',
+                'ผ่าน CC','ลูกค้าจองด่วน','ทดลองจอง','.','จองด่วนโทรเข้าคอลเซ็นเตอร์',
+                'จ','1','เทส','0','(Line@ Ann)','ลองจอง','ลูกค้า Line@','อยู่รร. ริเวอร์ไซด์'
+                '4/165 ซ.อนามัยงามเจริญ 11 แขวงท่าข้าม เขตบางขุนเทียน กทม.1050',
+                'บริษัท รีโวเด็ค จำกัด','ถกลวรรณ  081-7537819','ลูกค้า','จองพรุ่งนี้','biirrz','น.ส.','k',
+                'จอง','ไปกาญ','ลูกค้าจองผ่านคอลเซ็นเตอร์','admin จองให้','ลูกค้าจองผ่าน คอลเซ็นเตอร์',
+                'admin ส้ม','ลค จองด่วน','เอ็กทำการจองให้','ลูกค้าจองทาง','callcenter','จองด่วนลูกค้าต่างชาติ',
+                'ลูกค้าจองด่วน','ผ่านไลน์','(ผู้จองไม่ใช่ผู้ขับ)','nissan march','admin by pang',
+                'ลูกค้าจองผ่าน','admin by som','จองผ่าน','คอลเซ็นเตอร์','รอโอนจอง  ค่ะ','รอโอนจองค่ะ',
+                'จองย้อนหลัง','ชาวต่างชาติ','ส.ต.ต.','ิ','drivehub gade','จองผ่าน','นาย','mr.','mrs.',
+                'mrs','mr','k.','เอ็กทำการจองให้ พี่หมิวรับทราบ','ลค รับด่วน สนามบิน','เคสพี่เอ้ก','เจมส์ส่งลูกค้าให้จากไลน์@',
+                'พี่นิดส่งบุ้คให้ไดรฟ์ฮับ','คุณไอซ์ลูกค้าเก่า','ลูกค้าชาวสิงคโปร์','ของดีลเลอร์ที่จ.น่าน','รอเอกสารจากลูกค้าค่ะ',
+                'พี่เอ็กส่งเบอร์ให้','ลูกค้าเคสด่วน','ไดรฟ์ฮับจองแทน','lg จอง','เกดทำบุคเข้าให้','ลูกค้าเช่า1วัน','ลูกค้า รับด่วน 11โมง',
+                'คืนสนามบิน','ลูกค้ารับป่าตอง','ลูกค้ามาจาก','call center','คุณปู ลูกค้าline@','จองไปกาญ','ลูกค้าจองด่วน',
+                'ผ่านไลน์ ','จองผ่าน ']
+    data = filter_status(df)
+    data = data.copy()
+    data = replace_word(data,filter_word)
+    df_result_returning = sorting(data)
+    save_xlsx(df_result_returning)
+    #data.to_csv('data_clean.csv') """
