@@ -108,6 +108,7 @@ def loop_data(g1,g2,name):
                 n = n+1
                 print(n)
     user_actual_return[name] = n
+
     return user_actual_return
 
 def grouping(data):
