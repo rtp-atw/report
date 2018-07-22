@@ -80,25 +80,26 @@ def match_row(row1,row2,x,y):
     condition_3 = ((row1['email'][x]) == (row2['email'][y]))
     if (row1['first_name'][x] != '') and (row1['last_name'][x] != ''):
         if condition_1:
-            print(row1['first_name'][x],row1['last_name'][x],row2['first_name'][y],row2['last_name'][y])
+            #print(row1['first_name'][x],row1['last_name'][x],row2['first_name'][y],row2['last_name'][y])
             return True
     if ((row1['phone'][x] != '') and (row2['phone'][y]) != ''):
         if condition_2:
-            print(row1['phone'][x],row2['phone'][y])
+            #print(row1['phone'][x],row2['phone'][y])
             return True
     if ((row1['email'][x] != '') and (row2['email'][y] != '')):
         if condition_3:
-            print(row1['email'][x],row2['email'][y])
+            #print(row1['email'][x],row2['email'][y])
             return True
     else:
         return False
 
 
-def loop_data(g1,g2):
-    n = 0
+def loop_data(g1,g2,name):
+    n = 0  
     g1 = g1.reset_index(drop=True)
     g2 = g2.reset_index(drop=True)
-
+    print(name)
+    user_actual_return = {}
     for x in range(len(g1.index)):
         for y in range(len(g2.index)):
             matching = match_row(g1,g2,x,y)
@@ -106,15 +107,47 @@ def loop_data(g1,g2):
                 print(x,y,matching)
                 n = n+1
                 print(n)
+    user_actual_return[name] = n
+    return user_actual_return
 
-    return n
+def grouping(data):
+    base_data = data.copy()
+    group = {}
+    list_of_name = []
+    data_filter = base_data.filter(items=['booking_creation_year','booking_creation_month'])
+    data_filter = data_filter.drop_duplicates(['booking_creation_year','booking_creation_month'])
+    df_year_month = data_filter.reset_index(drop=True)
+
+    for i in range(len(df_year_month.index)):
+        name = 'group_'+str(int(df_year_month['booking_creation_year'][i]))+'_'+str(int(df_year_month['booking_creation_month'][i]))
+        list_of_name.append(name)
+        data =  base_data[(base_data['booking_creation_year'] == df_year_month['booking_creation_year'][i]) & (base_data['booking_creation_month'] == df_year_month['booking_creation_month'][i])]
+        data =  data.filter(items=['first_name','last_name','phone','email'])
+        data =  data.reset_index(drop=True)
+        #print(type(name))
+        group[name] = data
+
+    data_compare = compare_returning(group,list_of_name)
+
+    return data_compare
+
+def compare_returning(group,list_of_name):
+
+    for i in range(len(list_of_name)):
+
+        for x in range(i+1, len(list_of_name)):
+            if x < len(list_of_name):
+                name = list_of_name[i]+'_'+list_of_name[x]
+                data = loop_data(group[list_of_name[i]],group[list_of_name[x]],name)
+
+    return data
 
 def sorting(data):
     base_data = data.copy()
 
     group_2017_04 = base_data[(base_data['booking_creation_year'] == 2017) & (base_data['booking_creation_month'] == 4)]
     group_2017_04_col_fil = group_2017_04.filter(items=['first_name','last_name','phone','email'])
-
+    
     group_2017_05 = base_data[(base_data['booking_creation_year'] == 2017) & (base_data['booking_creation_month'] == 5)]
     group_2017_05_col_fil = group_2017_05.filter(items=['first_name','last_name','phone','email'])
 
@@ -305,13 +338,16 @@ def sorting(data):
                             '07_18': [user_return_04_07_18,user_return_05_07_18,user_return_06_07_18,user_return_07_07_18,user_return_08_07_18,user_return_09_07_18,user_return_10_07_18,user_return_11_07_18,user_return_12_07_18,user_return_01_07_18,user_return_02_07_18,user_return_03_07_18,user_return_04_07_18,user_return_05_07_18,user_return_06_07_18,'','']
                             }
     df_result = pd.DataFrame(data=user_return_per_month) 
-    df_result.to_csv('df_result.csv')     
+    df_result.to_csv('df_result_2.csv')     
     return df_result
 
 data = filter_status(df)
 data = data.copy()
 data = replace_word(data,filter_word)
-save_xlsx(data)
+test_data = grouping(data)
+print(test_data)
+test_data.to_csv('data_test.csv')
+#save_xlsx(data)
 #data.to_csv('data_cleaned.csv')
 #df_result_returning = sorting(data)
 #save_xlsx(df_result_returning)
