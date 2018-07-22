@@ -33,7 +33,9 @@ filter_word = ['xxxx','jjjjj','xxx','ไดรฟ์ฮับ','','ทดสอ�
                 'พี่นิดส่งบุ้คให้ไดรฟ์ฮับ','คุณไอซ์ลูกค้าเก่า','ลูกค้าชาวสิงคโปร์','ของดีลเลอร์ที่จ.น่าน','รอเอกสารจากลูกค้าค่ะ',
                 'พี่เอ็กส่งเบอร์ให้','ลูกค้าเคสด่วน','ไดรฟ์ฮับจองแทน','lg จอง','เกดทำบุคเข้าให้','ลูกค้าเช่า1วัน','ลูกค้า รับด่วน 11โมง',
                 'คืนสนามบิน','ลูกค้ารับป่าตอง','ลูกค้ามาจาก','call center','คุณปู ลูกค้าline@','จองไปกาญ','ลูกค้าจองด่วน',
-                'ผ่านไลน์ ','จองผ่าน ']
+                'ผ่านไลน์ ','จองผ่าน ','drivehub admin ทำการจองให้','drivehub gade ','เพื่อนพี่แทรคเตอร์drivehub',
+                'drivehub จอง','drivehub จองให้','จองครับ ','เช่าไปสุพรรณ จองมาทาง lind add',
+                'dh ทำจอง','x จองให้','จอง cs ']
 
 
 def replace_word(data,filter_word):
@@ -47,10 +49,18 @@ def replace_word(data,filter_word):
     
     data.update(data_replace)
 
-    invalid_email_index_list = data.index[data.loc[:, 'email'].str.contains('drivehub.co')]
+    invalid_email_index_list = data.index[data.loc[:, 'email'].str.contains('drivehub.co','drivehib.co')]
     for i in invalid_email_index_list:
         data.loc[i, 'email'] = ''
         data.loc[i,'call_center'] = 'Yes'
+
+    invalid_first_name_index_list = data.index[data.loc[:, 'first_name'].str.contains('drivehub')]
+    invalid_last_name_index_list = data.index[data.loc[:, 'last_name'].str.contains('drivehub')]
+    for i in invalid_first_name_index_list:
+        data.loc[i, 'first_name'] = ''
+    for i in invalid_last_name_index_list:
+        data.loc[i, 'last_name'] = ''
+
     return data
 
 def filter_status(data):
@@ -58,9 +68,9 @@ def filter_status(data):
     return data_filtered_status
 
 def save_xlsx(file_fil) :
-    #name = input("File name : ")
-    name = 'df_result_returning'
-    writer = ExcelWriter('df_result_returning.xlsx')   
+    name = input("File name : ")
+    #name = 'df_result_returning'
+    writer = ExcelWriter(name +'.xlsx')
     file_fil.to_excel(writer,'Sheet1')
     writer.save()
 
@@ -301,9 +311,11 @@ def sorting(data):
 data = filter_status(df)
 data = data.copy()
 data = replace_word(data,filter_word)
-df_result_returning = sorting(data)
-save_xlsx(df_result_returning)
-#data.to_csv('data_clean.csv')
+save_xlsx(data)
+#data.to_csv('data_cleaned.csv')
+#df_result_returning = sorting(data)
+#save_xlsx(df_result_returning)
+
 
 """ if __name__ == "__main__":
     df = pd.read_csv('BookUpdate13July2018.csv')
