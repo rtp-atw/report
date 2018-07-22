@@ -99,7 +99,7 @@ def loop_data(g1,g2,name):
     g1 = g1.reset_index(drop=True)
     g2 = g2.reset_index(drop=True)
     print(name)
-    user_actual_return = {}
+    #user_actual_return = {}
     for x in range(len(g1.index)):
         for y in range(len(g2.index)):
             matching = match_row(g1,g2,x,y)
@@ -107,9 +107,9 @@ def loop_data(g1,g2,name):
                 print(x,y,matching)
                 n = n+1
                 print(n)
-    user_actual_return[name] = n
+        #user_actual_return[name] = n
 
-    return user_actual_return
+    return n
 
 def grouping(data):
     base_data = data.copy()
@@ -133,14 +133,15 @@ def grouping(data):
     return data_compare
 
 def compare_returning(group,list_of_name):
-
+    user_actual_return = {}
     for i in range(len(list_of_name)):
 
         for x in range(i+1, len(list_of_name)):
             if x < len(list_of_name):
                 name = list_of_name[i]+'_'+list_of_name[x]
                 data = loop_data(group[list_of_name[i]],group[list_of_name[x]],name)
-
+                user_actual_return[name] = data
+                print(user_actual_return)
     return data
 
 def sorting(data):
@@ -347,7 +348,8 @@ data = data.copy()
 data = replace_word(data,filter_word)
 test_data = grouping(data)
 print(test_data)
-test_data.to_csv('data_test.csv')
+test_df = pd.DataFrame(test_data.items())
+test_df.to_csv('test_df.csv')
 #save_xlsx(data)
 #data.to_csv('data_cleaned.csv')
 #df_result_returning = sorting(data)
