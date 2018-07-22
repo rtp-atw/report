@@ -46,7 +46,7 @@ def replace_word(data,filter_word):
     data_replace['last_name'] = data_replace['last_name'].str.lower().replace([x.lower() for x in filter_word], '',)
     
     data.update(data_replace)
-
+    
     invalid_email_index_list = data.index[data.loc[:, 'email'].str.contains('drivehub.co')]
     for i in invalid_email_index_list:
         data.loc[i, 'email'] = ''
