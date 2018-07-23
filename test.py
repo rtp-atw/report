@@ -142,7 +142,7 @@ def compare_returning(group,list_of_name):
                 data = loop_data(group[list_of_name[i]],group[list_of_name[x]],name)
                 user_actual_return[name] = data
                 print(user_actual_return)
-    return data
+    return user_actual_return
 
 def sorting(data):
     base_data = data.copy()
