@@ -1,5 +1,6 @@
 import csv
 
+
 filter_word = ['xxxx', 'jjjjj', 'xxx', 'ไดรฟ์ฮับ', '', 'ทดสอบ', 'testx',
                'Drivehub', 'คับ', 'test', 'testing', 'test', 'ลุงคิดละ',
                'x', 'reserve', 'tester', 'test003', 'test02', 'test004',
