@@ -100,7 +100,7 @@ def calReturnUser(datas):
     return print(user_return)
 
 
-with open("book2.tsv") as f:
+with open("sep2018.tsv") as f:
     datas = []
     year_month_datas = []
     current_year_month = '20174'
@@ -115,15 +115,20 @@ with open("book2.tsv") as f:
         data['last_name'] = splitted[4]
         data['phone'] = splitted[5]
         data['email'] = splitted[2]
-        data['booking_creation_month'] = splitted[12]
-        data['booking_creation_year'] = splitted[11]
+        
+        # and splitted[11] != '10' and splitted[11] != '11' and splitted[11] != '12'
+        if splitted[11].find('0') == 0 :
+            data['booking_creation_month'] = splitted[11]
+        else:
+            data['booking_creation_month'] = '0' + splitted[11]
+
+        data['booking_creation_year'] = splitted[12]
         data['user_id'] = splitted[1]
         data['user_omniauth_provider'] = splitted[34]
 
         data = replace_word(data, filter_word)
 
         if data['booking_creation_year'] + data['booking_creation_month'] == current_year_month:
-
             year_month_datas.append(data)
         else:
             current_year_month = data['booking_creation_year'] + data['booking_creation_month']
@@ -133,8 +138,10 @@ with open("book2.tsv") as f:
 
     if (len(year_month_datas) != 0):
         datas.append(year_month_datas)
-    print(datas)
+
+    print(len(datas))
     calReturnUser(datas)
+    
     # group1 = datas[11]
     # group2 = datas[12]
     # test = compare_data(group1,group2)
